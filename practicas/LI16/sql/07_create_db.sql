@@ -1,0 +1,2 @@
+CREATE DATABASE db_eduardoantezana;
+SHOW DATABASES;

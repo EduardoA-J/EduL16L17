@@ -1,0 +1,1 @@
+DESCRIBE FORMATTED db_eduardoantezana.fb_eduardoantezana;

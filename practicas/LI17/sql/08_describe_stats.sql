@@ -1,0 +1,2 @@
+ANALYZE TABLE dbec_eduardoantezana.tec_eduardoantezana COMPUTE STATISTICS;
+DESCRIBE FORMATTED dbec_eduardoantezana.tec_eduardoantezana;

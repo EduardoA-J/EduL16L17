@@ -1,0 +1,2 @@
+CREATE DATABASE IF NOT EXISTS dbec_eduardoantezana;
+SHOW DATABASES;

@@ -1,0 +1,67 @@
+ Image li16-hive:4.0.1 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 514B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.31kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/hadoop-base:3.3.6
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/hadoop-base:3.3.6@sha256:eb915dcbb0c6b62a05a4a03d5e0aa5238c1592093a1dc9d1fe3e4874449dcc11
+#5 resolve docker.io/library/hadoop-base:3.3.6@sha256:eb915dcbb0c6b62a05a4a03d5e0aa5238c1592093a1dc9d1fe3e4874449dcc11 0.0s done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 68B done
+#6 DONE 0.0s
+
+#7 [2/5] RUN apt-get update && apt-get install -y --no-install-recommends curl     && rm -rf /var/lib/apt/lists/*     && curl -fSL "https://archive.apache.org/dist/hive/hive-4.0.1/apache-hive-4.0.1-bin.tar.gz" -o /tmp/hive.tar.gz     && tar -xzf /tmp/hive.tar.gz -C /opt     && mv /opt/apache-hive-4.0.1-bin /opt/hive     && rm -f /tmp/hive.tar.gz     && rm -f /opt/hive/lib/guava-*.jar     && cp /opt/hadoop-3.3.6/share/hadoop/common/lib/guava-*.jar /opt/hive/lib/     && if [ -f /opt/hive/conf/hive-log4j2.properties.template ]; then          cp /opt/hive/conf/hive-log4j2.properties.template /opt/hive/conf/hive-log4j2.properties;          sed -i 's/property.hive.log.level = INFO/property.hive.log.level = WARN/' /opt/hive/conf/hive-log4j2.properties;        fi
+#7 0.604 Get:1 http://deb.debian.org/debian bookworm InRelease [151 kB]
+#7 0.908 Get:2 http://deb.debian.org/debian bookworm-updates InRelease [55.4 kB]
+#7 1.022 Get:3 http://deb.debian.org/debian-security bookworm-security InRelease [34.8 kB]
+#7 1.127 Get:4 http://deb.debian.org/debian bookworm/main amd64 Packages [8790 kB]
+#7 2.155 Get:5 http://deb.debian.org/debian bookworm-updates/main amd64 Packages [6924 B]
+#7 2.256 Get:6 http://deb.debian.org/debian-security bookworm-security/main amd64 Packages [354 kB]
+#7 3.206 Fetched 9393 kB in 3s (3169 kB/s)
+#7 3.206 Reading package lists...
+#7 3.666 Reading package lists...
+#7 4.115 Building dependency tree...
+#7 4.234 Reading state information...
+#7 4.371 curl is already the newest version (7.88.1-10+deb12u15).
+#7 4.371 0 upgraded, 0 newly installed, 0 to remove and 10 not upgraded.
+#7 4.380   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+#7 4.380                                  Dload  Upload   Total   Spent    Left  Speed
+#7 4.380   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  389M    0 15939    0     0  10635      0 10:39:45  0:00:01 10:39:44 10633  0  389M    0  507k    0     0   205k      0  0:32:23  0:00:02  0:32:21  205k  1  389M    1 5015k    0     0  1453k      0  0:04:34  0:00:03  0:04:31 1452k  3  389M    3 14.6M    0     0  3381k      0  0:01:57  0:00:04  0:01:53 3380k  6  389M    6 25.6M    0     0  4827k      0  0:01:22  0:00:05  0:01:17 5304k  9  389M    9 36.1M    0     0  5738k      0  0:01:09  0:00:06  0:01:03 7471k 12  389M   12 46.7M    0     0  6431k      0  0:01:01  0:00:07  0:00:54 9526k 14  389M   14 57.4M    0     0  6964k      0  0:00:57  0:00:08  0:00:49 10.5M 17  389M   17 69.1M    0     0  7493k      0  0:00:53  0:00:09  0:00:44 10.8M 20  389M   20 79.6M    0     0  7807k      0  0:00:51  0:00:10  0:00:41 10.7M 23  389M   23 90.3M    0     0  8081k      0  0:00:49  0:00:11  0:00:38 10.8M 26  389M   26  101M    0     0  8377k      0  0:00:47  0:00:12  0:00:35 11.0M 28  389M   28  112M    0     0  8541k      0  0:00:46  0:00:13  0:00:33 10.9M 31  389M   31  123M    0     0  8722k      0  0:00:45  0:00:14  0:00:31 10.7M 34  389M   34  133M    0     0  8860k      0  0:00:44  0:00:15  0:00:29 10.8M 37  389M   37  145M    0     0  9052k      0  0:00:44  0:00:16  0:00:28 11.0M 40  389M   40  157M    0     0  9217k      0  0:00:43  0:00:17  0:00:26 11.0M 43  389M   43  168M    0     0  9351k      0  0:00:42  0:00:18  0:00:24 11.2M 46  389M   46  180M    0     0  9512k      0  0:00:41  0:00:19  0:00:22 11.5M 49  389M   49  190M    0     0  9559k      0  0:00:41  0:00:20  0:00:21 11.4M 51  389M   51  201M    0     0  9614k      0  0:00:41  0:00:21  0:00:20 11.1M 54  389M   54  211M    0     0  9668k      0  0:00:41  0:00:22  0:00:19 10.9M 57  389M   57  222M    0     0  9710k      0  0:00:41  0:00:23  0:00:18 10.7M 60  389M   60  233M    0     0  9789k      0  0:00:40  0:00:24  0:00:16 10.6M 62  389M   62  244M    0     0  9831k      0  0:00:40  0:00:25  0:00:15 10.6M 65  389M   65  256M    0     0  9923k      0  0:00:40  0:00:26  0:00:14 10.9M 68  389M   68  267M    0     0  9962k      0  0:00:40  0:00:27  0:00:13 11.0M 71  389M   71  277M    0     0   9.7M      0  0:00:39  0:00:28  0:00:11 11.0M 74  389M   74  289M    0     0   9.8M      0  0:00:39  0:00:29  0:00:10 11.0M 76  389M   76  299M    0     0   9.8M      0  0:00:39  0:00:30  0:00:09 11.0M 79  389M   79  310M    0     0   9.8M      0  0:00:39  0:00:31  0:00:08 10.8M 82  389M   82  321M    0     0   9.8M      0  0:00:39  0:00:32  0:00:07 10.7M 85  389M   85  331M    0     0   9.9M      0  0:00:39  0:00:33  0:00:06 10.7M 87  389M   87  341M    0     0   9.9M      0  0:00:39  0:00:34  0:00:05 10.3M 90  389M   90  351M    0     0   9.9M      0  0:00:39  0:00:35  0:00:04 10.3M 92  389M   92  361M    0     0   9.9M      0  0:00:39  0:00:36  0:00:03 10.2M 95  389M   95  372M    0     0   9.9M      0  0:00:39  0:00:37  0:00:02 10.3M 98  389M   98  383M    0     0   9.9M      0  0:00:39  0:00:38  0:00:01 10.3M100  389M  100  389M    0     0   9.9M      0  0:00:38  0:00:38 --:--:-- 10.6M
+#7 DONE 66.5s
+
+#8 [3/5] COPY hive-site.xml /opt/hive/conf/hive-site.xml
+#8 DONE 0.1s
+
+#9 [4/5] COPY entrypoint.sh /entrypoint.sh
+#9 DONE 0.1s
+
+#10 [5/5] RUN sed -i 's/\r$//' /entrypoint.sh && chmod a+x /entrypoint.sh
+#10 DONE 0.3s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 22.9s done
+#11 exporting manifest sha256:505602d29b7cb681c9a2af92206f8cb75931f802e992f5758a22c261aa042f6f 0.0s done
+#11 exporting config sha256:38d915c07b6babac0df5f7b2f8711d560da91f2d45e23dce94e73a5588c9c3bd 0.0s done
+#11 exporting attestation manifest sha256:7ac510ead15a402a85d5dfc953a234e4d2ffd1ab368be67a83ee3de552f02f90 0.0s done
+#11 exporting manifest list sha256:8e89ee93b594f41706449fa019602521679d3db957d62eed2d9f2412c43c9d5f 0.0s done
+#11 naming to docker.io/library/li16-hive:4.0.1 done
+#11 unpacking to docker.io/library/li16-hive:4.0.1
+#11 unpacking to docker.io/library/li16-hive:4.0.1 2.1s done
+#11 DONE 25.1s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ Image li16-hive:4.0.1 Built 

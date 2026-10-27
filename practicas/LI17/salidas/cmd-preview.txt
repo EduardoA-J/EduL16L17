@@ -1,0 +1,9 @@
+﻿Write-Host 'hive -f /tmp/06_create_database.sql'
+Write-Host '---- SQL ----'
+Get-Content -LiteralPath 'F:\BIG_DATA\li17\sql\06_create_database.sql' | ForEach-Object { $_.TrimEnd([char]13) } | Write-Host
+docker cp 'F:\BIG_DATA\li17\sql\06_create_database.sql' 'hive-server:/tmp/06_create_database.sql'
+docker exec hive-server sed -i 's/\r$//' /tmp/06_create_database.sql
+docker exec -e HADOOP_HEAPSIZE=2048 -e LANG=C.UTF-8 hive-server hive -f /tmp/06_create_database.sql
+Write-Host ''
+Write-Host '---- SQL ejecutado ----'
+Get-Content -LiteralPath 'F:\BIG_DATA\li17\sql\06_create_database.sql' | ForEach-Object { $_.TrimEnd([char]13) } | Write-Host

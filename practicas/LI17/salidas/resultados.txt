@@ -1,0 +1,441 @@
+==================== 04_describe.log
+En C:\Users\pc\AppData\Local\Temp\ps-script-045bdd76-f0c8-4dad-92cc-36be067b11f5.ps1: 104 Carácter: 3
++   docker exec -e HADOOP_HEAPSIZE=2048 hive-server hive -f "/tmp/$f" * ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + FullyQualifiedErrorId : NativeCommandError
+[jar:file:/opt/hadoop-3.3.6/share/hadoop/common/lib/slf4j-reload4j-1.7.36.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+col_name	data_type	comment
+# col_name            	data_type           	comment             
+invoiceno           	string              	                    
+stockcode           	string              	                    
+description         	string              	                    
+quantity            	int                 	                    
+invoicedate         	timestamp           	                    
+unitprice           	decimal(12,3)       	                    
+customerid          	int                 	                    
+country             	string              	                    
+# Detailed Table Information	 	 
+Database:           	dbec_eduardoantezana	 
+OwnerType:          	USER                	 
+Owner:              	root                	 
+CreateTime:         	Thu Oct 22 03:00:21 UTC 2026	 
+LastAccessTime:     	UNKNOWN             	 
+Retention:          	0                   	 
+Location:           	hdfs://namenode:8020/user/hive/warehouse/dbec_eduardoantezana.db/tec_eduardoantezana	 
+Table Type:         	EXTERNAL_TABLE      	 
+Table Parameters:	 	 
+	EXTERNAL            	TRUE                
+	TRANSLATED_TO_EXTERNAL	TRUE                
+	bucketing_version   	2                   
+	external.table.purge	TRUE                
+	numFiles            	1                   
+	numRows             	0                   
+	rawDataSize         	0                   
+	totalSize           	2784817             
+	transient_lastDdlTime	1792638031          
+# Storage Information	 	 
+SerDe Library:      	org.apache.hadoop.hive.ql.io.orc.OrcSerde	 
+InputFormat:        	org.apache.hadoop.hive.ql.io.orc.OrcInputFormat	 
+OutputFormat:       	org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat	 
+Compressed:         	No                  	 
+Num Buckets:        	-1                  	 
+Bucket Columns:     	[]                  	 
+Sort Columns:       	[]                  	 
+Storage Desc Params:	 	 
+	serialization.format	1                   
+Time taken: 1.286 seconds, Fetched: 40 row(s)
+==================== q01_ingreso_total.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 80a15dd5-9147-4969-b1a6-50f12636e570
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, customerid, unitprice
+Total jobs = 1
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:13,083 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.3 sec
+ingreso_total
+8911407.90
+Time taken: 4.36 seconds, Fetched: 1 row(s)
+==================== q02_top_productos.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = f49e8bc9-38d5-4dce-809f-fc31ac551991
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, description, invoiceno
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:24,318 Stage-1 map = 0%,  reduce = 0%
+2026-10-22 03:02:27,339 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 9.41 sec
+2026-10-22 03:02:28,346 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 12.42 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:29,622 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.59 sec
+description	unidades_vendidas	pedidos_con_producto
+PAPER CRAFT , LITTLE BIRDIE	80995	1
+MEDIUM CERAMIC TOP STORAGE JAR	78033	247
+WORLD WAR 2 GLIDERS ASSTD DESIGNS	55047	535
+JUMBO BAG RED RETROSPOT	48478	2092
+WHITE HANGING HEART T-LIGHT HOLDER	37895	2260
+POPCORN HOLDER	36761	803
+ASSORTED COLOUR BIRD ORNAMENT	36461	1455
+PACK OF 72 RETROSPOT CAKE CASES	36419	1320
+NULL	32547	592
+RABBIT NIGHT LIGHT	30788	994
+Time taken: 9.706 seconds, Fetched: 10 row(s)
+==================== q03_clientes_pais.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 73672313-bbca-4b1b-9ecf-b2fb4c4c1a1b
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: country, customerid
+Total jobs = 3
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:41,278 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.08 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:42,571 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.49 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:43,814 Stage-3 map = 100%,  reduce = 100%, Cumulative CPU 0.62 sec
+country	clientes_unicos	porcentaje
+United Kingdom	3950	90.18
+Germany	95	2.17
+France	87	1.99
+Spain	31	0.71
+Belgium	25	0.57
+Switzerland	21	0.48
+Portugal	19	0.43
+Italy	15	0.34
+Finland	12	0.27
+Austria	11	0.25
+Norway	10	0.23
+Australia	9	0.21
+Channel Islands	9	0.21
+Denmark	9	0.21
+Netherlands	9	0.21
+Japan	8	0.18
+Sweden	8	0.18
+Cyprus	8	0.18
+Poland	6	0.14
+Greece	4	0.09
+Israel	4	0.09
+Unspecified	4	0.09
+Canada	4	0.09
+USA	4	0.09
+EIRE	3	0.07
+United Arab Emirates	2	0.05
+Bahrain	2	0.05
+Malta	2	0.05
+Saudi Arabia	1	0.02
+Singapore	1	0.02
+Czech Republic	1	0.02
+Iceland	1	0.02
+Brazil	1	0.02
+European Community	1	0.02
+Lithuania	1	0.02
+Lebanon	1	0.02
+RSA	1	0.02
+Time taken: 6.996 seconds, Fetched: 37 row(s)
+==================== q04_ticket.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 8537ba51-c03d-4b2c-b653-d3e352b035de
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, invoiceno, unitprice
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:55,068 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 2.65 sec
+2026-10-22 03:02:56,073 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 4.67 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:02:57,369 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.63 sec
+ticket_promedio	mediana_ticket
+534.40	303.79922222222217
+Time taken: 6.782 seconds, Fetched: 1 row(s)
+==================== q05_evolucion_mensual.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 7bf3e332-e775-4bf3-923e-1113aaa53150
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, invoiceno, unitprice, invoicedate
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:08,476 Stage-1 map = 100%,  reduce = 0%
+2026-10-22 03:03:09,483 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 4.29 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:10,805 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.8 sec
+anio	mes	pedidos	ingresos
+2010	12	1559	823746.14
+2011	1	1086	691364.56
+2011	2	1100	523631.89
+2011	3	1454	717639.36
+2011	4	1246	537808.62
+2011	5	1681	770536.02
+2011	6	1533	761739.90
+2011	7	1475	719221.19
+2011	8	1361	759138.38
+2011	9	1837	1058590.17
+2011	10	2040	1154979.30
+2011	11	2769	1509496.33
+2011	12	819	638792.68
+Time taken: 6.786 seconds, Fetched: 13 row(s)
+==================== q06_devolucion.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 94b2d095-01f8-41f8-89e2-57b3b9213972
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, customerid, description, invoiceno
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:21,887 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.1 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:23,184 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.68 sec
+description	devoluciones	ventas_validas	tasa_devolucion_pct
+CRUK Commission	16	0	100.00
+Discount	77	0	100.00
+WOODEN BOX ADVENT CALENDAR 	8	5	61.54
+Manual	175	290	37.63
+SET OF 3 BABUSHKA STACKING TINS	6	10	37.50
+DANISH ROSE BEDSIDE CABINET	5	10	33.33
+CINDERELLA CHANDELIER 	10	22	31.25
+VINTAGE BLUE KITCHEN CABINET	6	20	23.08
+PLASMATRONIC LAMP	3	10	23.08
+LARGE POPCORN HOLDER 	15	53	22.06
+ROCOCO WALL MIRROR WHITE	12	43	21.82
+SAVOY ART DECO CLOCK	12	45	21.05
+VINTAGE NOTEBOOK PARIS DAYS	2	8	20.00
+BEACH HUT DESIGN BLACKBOARD	2	8	20.00
+LARGE BLUE PROVENCAL CERAMIC BALL	2	8	20.00
+Time taken: 5.673 seconds, Fetched: 15 row(s)
+==================== q07_hora.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = b11b8f25-195a-4fbf-9f1a-869631bf4611
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, invoiceno, unitprice, invoicedate
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:34,332 Stage-1 map = 0%,  reduce = 0%
+2026-10-22 03:03:35,339 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 4.64 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:03:36,631 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.82 sec
+hora	pedidos	ingresos	ticket_promedio
+6	1	4.25	4.25
+7	29	31059.21	81.95
+8	566	283868.52	32.26
+9	1484	990267.82	29.38
+10	2361	1446742.70	30.25
+11	2396	1239954.44	22.09
+12	3220	1444245.88	18.73
+13	2753	1265736.30	17.83
+14	2457	1181812.37	17.92
+15	2336	1352972.18	17.74
+16	1335	754006.56	14.13
+17	667	461603.49	16.75
+18	192	144813.05	18.78
+19	146	50665.01	14.41
+20	18	18932.76	23.61
+Time taken: 6.715 seconds, Fetched: 15 row(s)
+==================== q08_estacionalidad.log
+description	mes	unidades_mes	distribucion_pct
+NROWS 14790
+FIRST  4 PURPLE FLOCK DINNER CANDLES	12	65	100.00
+LAST YOU'RE CONFUSING ME METAL SIGN 	3	396	8.95
+Time taken: 6.792 seconds, Fetched: 14927 row(s)
+==================== q09_margen_proxy.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = b205e17a-2413-4591-8cab-27f29e28c2a7
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, description, invoiceno, unitprice
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:01,574 Stage-1 map = 0%,  reduce = 0%
+2026-10-22 03:04:04,590 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 9.85 sec
+2026-10-22 03:04:05,598 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 13.74 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:06,882 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.63 sec
+description	precio_promedio	pedidos_con_producto	score_margen_proxy
+DOTCOM POSTAGE	292.14	706	206248.77
+Manual	230.15	290	66743.93
+POSTAGE	31.08	1126	34992.23
+REGENCY CAKESTAND 3 TIER	13.98	1988	27786.13
+PARTY BUNTING	5.79	1685	9763.35
+SET OF 3 CAKE TINS PANTRY DESIGN 	5.83	1385	8073.57
+CREAM SWEETHEART MINI CHEST	14.29	519	7418.28
+WHITE HANGING HEART T-LIGHT HOLDER	3.22	2256	7257.43
+ENAMEL BREAD BIN CREAM	15.88	454	7209.77
+CARRIAGE	49.88	141	7033.00
+SET/4 WHITE RETRO STORAGE CUBES 	45.23	155	7011.00
+RED RETROSPOT CAKE STAND	12.60	539	6793.83
+IVORY KITCHEN SCALES	9.44	711	6712.89
+BREAD BIN DINER STYLE IVORY	17.42	375	6530.68
+PICNIC BASKET WICKER LARGE	14.38	445	6399.85
+DOORMAT KEEP CALM AND COME IN	8.77	728	6387.57
+SPOTTY BUNTING	5.52	1140	6295.05
+DOORMAT RED RETROSPOT	8.95	696	6230.26
+WOOD BLACK BOARD ANT WHITE FINISH	8.44	685	5780.74
+JAM MAKING SET WITH JARS	5.07	1132	5741.35
+Time taken: 9.794 seconds, Fetched: 20 row(s)
+==================== q10_clientes_id.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = e2dd3f1c-2033-4142-ae4c-0aa01035b6d7
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, customerid, invoiceno, unitprice
+Total jobs = 1
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:18,177 Stage-1 map = 0%,  reduce = 0%
+2026-10-22 03:04:19,185 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 4.58 sec
+tipo_cliente	pedidos	ticket_promedio	revenue_total
+An├│nimo	1428	13.28	1755276.64
+Registrado	18532	22.40	8911407.90
+Time taken: 5.382 seconds, Fetched: 2 row(s)
+==================== q11_dia_semana.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = 259b228e-12a5-45b0-b4a1-6ca71e9794a0
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: quantity, invoiceno, unitprice, invoicedate
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:30,679 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.09 sec
+2026-10-22 03:04:31,687 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 4.59 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:32,962 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.65 sec
+dia_semana	dia_nombre	pedidos	ingresos
+1	Domingo	2204	813827.61
+2	Lunes	3126	1779575.04
+3	Martes	3554	2178632.61
+4	Mi├®rcoles	3690	1851147.81
+5	Jueves	4246	2203161.24
+6	Viernes	3140	1840340.23
+Time taken: 7.132 seconds, Fetched: 6 row(s)
+==================== q12_cancelacion_pais.log
+Logging initialized using configuration in file:/opt/hive/conf/hive-log4j2.properties Async: true
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.hadoop.hive.common.StringInternUtils 
+(file:/opt/hive/lib/hive-common-4.0.1.jar) to field java.net.URI.string
+WARNING: Please consider reporting this to the maintainers of org.apache.hadoop.hive.common.StringInternUtils
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Hive Session ID = a8f14fd2-0f87-4eca-a80a-129ff4aed813
+No Stats for dbec_eduardoantezana@tec_eduardoantezana, Columns: country, quantity, invoiceno
+Total jobs = 2
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:44,028 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 1.8 sec
+  set hive.exec.reducers.bytes.per.reducer=<number>
+  set hive.exec.reducers.max=<number>
+  set mapreduce.job.reduces=<number>
+2026-10-22 03:04:45,324 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 0.52 sec
+country	cancelaciones	ventas_validas	tasa_cancelacion_pct
+USA	112	179	38.49
+Malta	15	112	11.81
+Japan	37	321	10.34
+Australia	74	1185	5.88
+Italy	45	758	5.60
+Germany	453	9042	4.77
+EIRE	302	7894	3.68
+Poland	11	330	3.23
+Singapore	7	222	3.06
+Sweden	11	451	2.38
+Denmark	9	380	2.31
+Spain	48	2485	1.89
+United Kingdom	9192	486286	1.86
+Belgium	38	2031	1.84
+Switzerland	35	1967	1.75
+France	149	8408	1.74
+European Community	1	60	1.64
+Finland	10	685	1.44
+Hong Kong	4	284	1.39
+Channel Islands	10	748	1.32
+Cyprus	8	614	1.29
+Norway	14	1072	1.29
+Portugal	18	1501	1.18
+Austria	3	398	0.75
+Greece	1	145	0.68
+Israel	2	295	0.67
+Netherlands	8	2363	0.34
+Iceland	0	182	0.00
+Canada	0	151	0.00
+RSA	0	58	0.00
+United Arab Emirates	0	68	0.00
+Unspecified	0	446	0.00
+Time taken: 5.623 seconds, Fetched: 32 row(s)

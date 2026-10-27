@@ -1,0 +1,1 @@
+DESCRIBE FORMATTED dbec_eduardoantezana.tec_eduardoantezana;

@@ -1,0 +1,15 @@
+services:
+  hive-server:
+    build: .
+    image: li16-hive:4.0.1
+    container_name: hive-server
+    hostname: hive-server
+    stdin_open: true
+    tty: true
+    networks:
+      - hadoop_network
+
+networks:
+  hadoop_network:
+    name: hadoop_network
+    external: true
